@@ -22,6 +22,11 @@ class QuizTable extends React.Component {
 }
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {quizData: ["Zeit", "t", "1 s"]};
+  }
+
   refreshContent() {
     //refresh the loaded contents
   }
