@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 class QuizCard extends React.Component {
 	render() {
 		return (
-			<View><Text>{this.props.name}</Text></View>
+			<View><Text>{this.props.content}</Text></View>
 		);
 	}
 }
@@ -13,9 +13,9 @@ class QuizTable extends React.Component {
 	render() {
 		return (
 			<View>
-			<QuizCard name="Größe" />
-			<QuizCard name="Formelzeichen" />
-			<QuizCard name="Einheit / Wert" />
+			<QuizCard content="Größe" />
+			<QuizCard content="Formelzeichen" />
+			<QuizCard content="Einheit / Wert" />
 			</View>
 		);
 	}
