@@ -25,31 +25,31 @@ class QuizTable extends React.Component {
 }
 
 export default class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {quizData: ["Zeit", "t", "1 s"]};
-  }
+	constructor() {
+		super();
+		this.state = {quizData: ["Zeit", "t", "1 s"]};
+	}
 
-  refreshContent() {
-    //refresh the loaded contents
-  }
+	refreshContent() {
+		//refresh the loaded contents
+	}
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-	    <QuizTable />
-	<Button onPress={this.refreshContent} title="Neue Inhalte laden" />
-      </View>
+	render() {
+		return (
+			<View style={styles.container}>
+				<Text>Open up App.js to start working on your app!</Text>
+				<QuizTable />
+				<Button onPress={this.refreshContent} title="Neue Inhalte laden" />
+			</View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1,
+		backgroundColor: '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
 });
