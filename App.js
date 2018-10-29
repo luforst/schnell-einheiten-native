@@ -13,9 +13,12 @@ class QuizTable extends React.Component {
 	render() {
 		return (
 			<View>
-			<QuizCard content="Größe" />
-			<QuizCard content="Formelzeichen" />
-			<QuizCard content="Einheit / Wert" />
+			<View><Text>Größe</Text></View>
+			<View><QuizCard content="Zeit" /></View>
+			<View><Text>Formelzeichen</Text></View>
+			<View><QuizCard content="t" /></View>
+			<View><Text>Einheit / Wert</Text></View>
+			<View><QuizCard content="1s (Sekunde)" /></View>
 			</View>
 		);
 	}
