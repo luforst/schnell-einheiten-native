@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import './contentdb.js'
 
 function randint(min, max) {
 	min = Math.ceil(min);
