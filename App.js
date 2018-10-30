@@ -48,8 +48,8 @@ export default class App extends React.Component {
 				<QuizTable />
 				<Button onPress={this.refreshContent} title="Neue Inhalte laden" />
 			</View>
-    );
-  }
+		);
+	}
 }
 
 const styles = StyleSheet.create({
