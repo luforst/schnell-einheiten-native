@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import './contentdb.js'
 
+contentdb = ["Ladung", "Q", "1C (Coulomb)"];
+
 function randint(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
@@ -39,6 +41,9 @@ export default class App extends React.Component {
 
 	refreshContent() {
 		//refresh the loaded contents
+		this.setState({
+			quizData: contentdb[0] //to be replaced with random index
+		});
 	}
 
 	render() {
