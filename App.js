@@ -42,7 +42,7 @@ export default class App extends React.Component {
 	refreshContent() {
 		//refresh the loaded contents
 		this.setState({
-			quizData: contentdb[0] //to be replaced with random index
+			quizData: ["Ladung", "Q", "1 C (Coulomb)"]
 		});
 	}
 
