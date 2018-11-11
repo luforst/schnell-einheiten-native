@@ -18,6 +18,15 @@ class QuizCard extends React.Component {
 	}
 }
 
+class MathCard extends React.Component {
+	render() {
+		/*Text tag is to be replaced with MathJax/KaTeX component*/
+		return (
+			<View><Text>{this.props.content}</Text></View>
+		);
+	}
+}
+
 class QuizTable extends React.Component {
 	render() {
 		return (
