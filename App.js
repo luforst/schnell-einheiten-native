@@ -27,15 +27,25 @@ class MathCard extends React.Component {
 	}
 }
 
+class CardCaption extends React.Component {
+	render() {
+		return (
+			<View>
+			<Text>{this.props.text}</Text>
+			</View>
+		);
+	}
+}
+
 class QuizTable extends React.Component {
 	render() {
 		return (
 			<View>
-			<View><Text>Größe</Text></View>
+			<CardCaption text="Größe / Name einer Konstante" />
 			<View><QuizCard content="Zeit" /></View>
-			<View><Text>Formelzeichen</Text></View>
+			<CardCaption text="Formelzeichen" />
 			<View><QuizCard content="t" /></View>
-			<View><Text>Einheit / Wert</Text></View>
+			<CardCaption text="Einheit / Wert einer Konstante" />
 			<View><QuizCard content="1s (Sekunde)" /></View>
 			</View>
 		);
