@@ -31,7 +31,7 @@ class CardCaption extends React.Component {
 	render() {
 		return (
 			<View>
-			<Text>{this.props.text}</Text>
+			<Text style={styles.caption}>{this.props.text}</Text>
 			</View>
 		);
 	}
@@ -101,5 +101,8 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+	caption: {
+		fontWeight: 'bold',
 	},
 });
