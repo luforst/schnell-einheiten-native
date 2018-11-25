@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Switch } from 'react-native';
 import './contentdb.js'
 
 contentdb = [["Ladung", "Q", "1C (Coulomb)"]];
@@ -48,6 +48,25 @@ class QuizTable extends React.Component {
 			<CardCaption text="Einheit / Wert einer Konstante" />
 			<View><QuizCard content="1s (Sekunde)" /></View>
 			</View>
+		);
+	}
+}
+
+class TopicSwitch extends React.Component {
+	render() {
+		return (
+			<View>
+				<Switch />
+				<Text>{this.props.caption}</Text>
+			</View>
+		);
+	}
+}
+
+class TopicChooser extends React.Component {
+	render() {
+		return (
+			<TopicSwitch caption="Beispiel-Kategorie" />
 		);
 	}
 }
