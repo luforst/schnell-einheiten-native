@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Switch } from 'react-native';
+import { StyleSheet, Button, Switch } from 'react-native';
+import { Container, Header, Content, Card, CardItem, Body, Text, View, DeckSwiper } from 'native-base';
 import './contentdb.js'
 
 contentdb = [
@@ -17,48 +18,45 @@ function randint(min, max) {
 	return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
+class QuizField extends React.Component {
+	render() {
+		return (
+			<Card>
+            			<CardItem header>
+					<Text>{this.props.caption}</Text>
+				</CardItem>
+				<CardItem><Body>
+					<Text>
+                  				{this.props.content}
+					</Text>
+				</Body></CardItem>
+			</Card>
+		);
+	}
+}
+/*
+class MathCard extends React.Component {
+	render() {
+		//Text tag is to be replaced with MathJax/KaTeX component
+		return (
+			<View><Text>{this.props.content}</Text></View>
+		);
+	}
+}
+*/
+
 class QuizCard extends React.Component {
 	render() {
 		return (
-			<View><Text>{this.props.content}</Text></View>
+			<Card style={{ elevation: 3 }}>
+				<QuizField caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
+				<QuizField caption="Formelzeichen" content={this.props.quizData[1]} />
+				<QuizField caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
+			</Card>
 		);
 	}
 }
-
-class MathCard extends React.Component {
-	render() {
-		/*Text tag is to be replaced with MathJax/KaTeX component*/
-		return (
-			<View><Text>{this.props.content}</Text></View>
-		);
-	}
-}
-
-class CardCaption extends React.Component {
-	render() {
-		return (
-			<View>
-			<Text style={styles.caption}>{this.props.text}</Text>
-			</View>
-		);
-	}
-}
-
-class QuizTable extends React.Component {
-	render() {
-		return (
-			<View>
-			<CardCaption text="Größe / Name einer Konstante" />
-			<View><QuizCard content={this.props.quizData[0]} /></View>
-			<CardCaption text="Formelzeichen" />
-			<View><QuizCard content={this.props.quizData[1]} /></View>
-			<CardCaption text="Einheit / Wert einer Konstante" />
-			<View><QuizCard content={this.props.quizData[2]} /></View>
-			</View>
-		);
-	}
-}
-
+/*
 class TopicSwitch extends React.Component {
 	render() {
 		return (
@@ -77,9 +75,28 @@ class TopicChooser extends React.Component {
 		);
 	}
 }
+*/
+
+class QuizDeckSwiper extends React.Component {
+	render() {
+		return (
+			<Container>
+				<Header />
+				<View>
+					<DeckSwiper
+						dataSource={contentdb}
+						renderItem={item =>
+							<QuizCard quizData={item} />
+						}
+					 />
+				</View>
+			</Container>
+		);
+	}
+}
 
 export default class App extends React.Component {
-	constructor() {
+/*	constructor() {
 		super();
 		this.state = {quizData: ["Zeit", "t", "1 s"]};
 		this.refreshContent = this.refreshContent.bind(this);
@@ -91,14 +108,14 @@ export default class App extends React.Component {
 			quizData: contentdb[randint(0, contentdb.length-1)]
 		});
 	}
-
+*/
 	render() {
 		return (
-			<View style={styles.container}>
-				<Text>Open up App.js to start working on your app!</Text>
-				<QuizTable quizData={this.state.quizData} />
-				<Button onPress={this.refreshContent} title="Neue Inhalte laden" />
-			</View>
+			<Container>
+				<Content>
+					<QuizDeckSwiper />
+				</Content>
+			</Container>
 		);
 	}
 }
