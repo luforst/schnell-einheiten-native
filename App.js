@@ -42,11 +42,11 @@ class QuizTable extends React.Component {
 		return (
 			<View>
 			<CardCaption text="Größe / Name einer Konstante" />
-			<View><QuizCard content="Zeit" /></View>
+			<View><QuizCard content={this.props.quizData[0]} /></View>
 			<CardCaption text="Formelzeichen" />
-			<View><QuizCard content="t" /></View>
+			<View><QuizCard content={this.props.quizData[1]} /></View>
 			<CardCaption text="Einheit / Wert einer Konstante" />
-			<View><QuizCard content="1s (Sekunde)" /></View>
+			<View><QuizCard content={this.props.quizData[2]} /></View>
 			</View>
 		);
 	}
@@ -75,6 +75,7 @@ export default class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {quizData: ["Zeit", "t", "1 s"]};
+		this.refreshContent = this.refreshContent.bind(this);
 	}
 
 	refreshContent() {
