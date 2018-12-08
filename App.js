@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Button, Switch } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, View, DeckSwiper } from 'native-base';
 import './contentdb.js'
 
