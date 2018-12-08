@@ -81,7 +81,7 @@ export default class App extends React.Component {
 	refreshContent() {
 		//refresh the loaded contents
 		this.setState({
-			quizData: ["Ladung", "Q", "1 C (Coulomb)"]
+			quizData: contentdb[randint(0, contentdb.length-1)]
 		});
 	}
 
