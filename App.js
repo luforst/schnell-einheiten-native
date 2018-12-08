@@ -35,7 +35,7 @@ class QuizField extends React.Component {
 	}
 }
 /*
-class MathCard extends React.Component {
+class MathField extends React.Component {
 	render() {
 		//Text tag is to be replaced with MathJax/KaTeX component
 		return (
@@ -56,26 +56,6 @@ class QuizCard extends React.Component {
 		);
 	}
 }
-/*
-class TopicSwitch extends React.Component {
-	render() {
-		return (
-			<View>
-				<Switch />
-				<Text>{this.props.caption}</Text>
-			</View>
-		);
-	}
-}
-
-class TopicChooser extends React.Component {
-	render() {
-		return (
-			<TopicSwitch caption="Beispiel-Kategorie" />
-		);
-	}
-}
-*/
 
 class QuizDeckSwiper extends React.Component {
 	render() {
@@ -96,19 +76,6 @@ class QuizDeckSwiper extends React.Component {
 }
 
 export default class App extends React.Component {
-/*	constructor() {
-		super();
-		this.state = {quizData: ["Zeit", "t", "1 s"]};
-		this.refreshContent = this.refreshContent.bind(this);
-	}
-
-	refreshContent() {
-		//refresh the loaded contents
-		this.setState({
-			quizData: contentdb[randint(0, contentdb.length-1)]
-		});
-	}
-*/
 	render() {
 		return (
 			<Container>
