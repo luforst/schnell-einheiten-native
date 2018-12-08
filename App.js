@@ -2,7 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Switch } from 'react-native';
 import './contentdb.js'
 
-contentdb = [["Ladung", "Q", "1C (Coulomb)"]];
+contentdb = [
+	["Ladung", "Q", "1C (Coulomb)"],
+	["Spannung", "U", "1V (Volt)"],
+	["Kraft", "F", "1N (Newton)"],
+	["Zeit", "t", "1s (Sekunde)"],
+	["Energie", "W, E", "1J (Joule)"],
+	["Weg", "s", "1m (Meter)"],
+	["Stromstärke", "I", "1A (Ampere)"]];
 
 function randint(min, max) {
 	min = Math.ceil(min);
