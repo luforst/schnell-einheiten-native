@@ -46,12 +46,26 @@ class MathField extends React.Component {
 */
 
 class QuizCard extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			groesse: true,
+			fz: true,
+			einheit: true
+		};
+		this.flipCard() = this.flipCard.bind(this);
+	}
+
+	flipCard(elem) {
+		this.setState(elem: elem ? false : true);
+	}
+
 	render() {
 		return (
 			<Card style={{ elevation: 3 }}>
-				<QuizField caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
-				<QuizField caption="Formelzeichen" content={this.props.quizData[1]} />
-				<QuizField caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
+				<QuizField onClick={this.flipCard("groesse")} showMe={this.state.groesse} caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
+				<QuizField onClick={this.flipCard("fz")} showMe={this.state.fz} caption="Formelzeichen" content={this.props.quizData[1]} />
+				<QuizField onClick={this.flipCard("einheit")} showMe={this.state.einheit} caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
 			</Card>
 		);
 	}
