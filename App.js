@@ -24,7 +24,7 @@ class QuizField extends React.Component {
 		if (this.props.showMe) {
 			content = this.props.content;
 		} else {
-			content = "Nichts";
+			content = "?";
 		}
 
 		return (
@@ -35,7 +35,6 @@ class QuizField extends React.Component {
 				<CardItem><Body>
 					<Text>
 						{content}
-						{this.props.showMe ? "Hallo" : "Huhu"}
 					</Text>
 				</Body></CardItem>
 			</Card>
@@ -57,9 +56,9 @@ class QuizCard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			groesse: true,
-			fz: true,
-			einheit: true
+			groesse: false,
+			fz: false,
+			einheit: false
 		};
 		this.flipCard = this.flipCard.bind(this);
 	}
