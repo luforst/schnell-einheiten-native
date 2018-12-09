@@ -20,14 +20,22 @@ function randint(min, max) {
 
 class QuizField extends React.Component {
 	render() {
+		let content;
+		if (this.props.showMe) {
+			content = this.props.content;
+		} else {
+			content = "Nichts";
+		}
+
 		return (
 			<Card>
-            			<CardItem header>
+            			<CardItem header button onPress={this.props.onPress}>
 					<Text>{this.props.caption}</Text>
 				</CardItem>
 				<CardItem><Body>
 					<Text>
-                  				{this.props.content}
+						{content}
+						{this.props.showMe ? "Hallo" : "Huhu"}
 					</Text>
 				</Body></CardItem>
 			</Card>
@@ -46,26 +54,40 @@ class MathField extends React.Component {
 */
 
 class QuizCard extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			groesse: true,
 			fz: true,
 			einheit: true
 		};
-		this.flipCard() = this.flipCard.bind(this);
+		this.flipCard = this.flipCard.bind(this);
 	}
 
-	flipCard(elem) {
-		this.setState(elem: elem ? false : true);
+	flipCard() {
+		console.log(this.state)
+		if (this.state.fz) {
+			this.setState(state => ({
+				fz: false
+			}));
+		} else {
+			this.setState(state => ({
+				fz: true
+			}));
+		}
+		/*this.setState({
+			groesse: false,
+			fz: false,
+			einheit: true
+		});*/
 	}
 
 	render() {
 		return (
 			<Card style={{ elevation: 3 }}>
-				<QuizField onClick={this.flipCard("groesse")} showMe={this.state.groesse} caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
-				<QuizField onClick={this.flipCard("fz")} showMe={this.state.fz} caption="Formelzeichen" content={this.props.quizData[1]} />
-				<QuizField onClick={this.flipCard("einheit")} showMe={this.state.einheit} caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
+				<QuizField onPress={this.flipCard} showMe={this.state.groesse} caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
+				<QuizField onPress={this.flipCard} showMe={this.state.fz} caption="Formelzeichen" content={this.props.quizData[1]} />
+				<QuizField onPress={this.flipCard} showMe={this.state.einheit} caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
 			</Card>
 		);
 	}
