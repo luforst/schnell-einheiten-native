@@ -53,6 +53,18 @@ class MathField extends React.Component {
 */
 
 class QuizCard extends React.Component {
+	render() {
+		return (
+			<Card style={{ elevation: 3 }}>
+				<QuizField onPress={() => this.props.flipCard("groesse")} showMe={this.props.showFields.groesse} caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
+				<QuizField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" content={this.props.quizData[1]} />
+				<QuizField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
+			</Card>
+		);
+	}
+}
+
+class QuizDeckSwiper extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -61,6 +73,7 @@ class QuizCard extends React.Component {
 			einheit: false
 		};
 		this.flipCard = this.flipCard.bind(this);
+		this.clearFields = this.clearFields.bind(this);
 	}
 
 	flipCard(elem) {
@@ -74,25 +87,17 @@ class QuizCard extends React.Component {
 				[elem]: true
 			}));
 		}
-		/*this.setState({
+	}
+
+	clearFields() {
+		console.log("Swipe");
+		this.setState(state => ({
 			groesse: false,
 			fz: false,
-			einheit: true
-		});*/
+			einheit: false
+		}));
 	}
 
-	render() {
-		return (
-			<Card style={{ elevation: 3 }}>
-				<QuizField onPress={() => this.flipCard("groesse")} showMe={this.state.groesse} caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
-				<QuizField onPress={() => this.flipCard("fz")} showMe={this.state.fz} caption="Formelzeichen" content={this.props.quizData[1]} />
-				<QuizField onPress={() => this.flipCard("einheit")} showMe={this.state.einheit} caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
-			</Card>
-		);
-	}
-}
-
-class QuizDeckSwiper extends React.Component {
 	render() {
 		return (
 			<Container>
@@ -101,8 +106,10 @@ class QuizDeckSwiper extends React.Component {
 					<DeckSwiper
 						dataSource={contentdb}
 						renderItem={item =>
-							<QuizCard quizData={item} />
+							<QuizCard quizData={item} showFields={this.state} flipCard={this.flipCard} />
 						}
+						onSwipeRight={() => this.clearFields()}
+						onSwipeLeft={() => this.clearFields()}
 					 />
 				</View>
 			</Container>
