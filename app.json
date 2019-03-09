@@ -20,8 +20,13 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "host.exp.schnell-einheiten",
+      "versionCode": 1
+    },
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "githubUrl": "https://github.com/luforst/schnell-einheiten-native"
   }
 }
