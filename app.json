@@ -21,7 +21,7 @@
       "**/*"
     ],
     "android": {
-      "package": "host.exp.schnell-einheiten",
+      "package": "host.exp.schnelleinheiten",
       "versionCode": 1
     },
     "ios": {
