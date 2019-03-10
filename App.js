@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, View, DeckSwiper } from 'native-base';
-import './contentdb.js'
+import './contentdb.json'
 
 contentdb = [
 	["Ladung", "Q", "1C (Coulomb)"],
