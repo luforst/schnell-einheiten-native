@@ -41,24 +41,38 @@ class QuizField extends React.Component {
 		);
 	}
 }
-/*
+
 class MathField extends React.Component {
 	render() {
-		//Text tag is to be replaced with MathJax/KaTeX component
+		let content;
+		if (this.props.showMe) {
+			content = this.props.content;
+		} else {
+			content = "?";
+		}
+
 		return (
-			<View><Text>{this.props.content}</Text></View>
+			<Card>
+            	<CardItem header button onPress={this.props.onPress}>
+					<Text>{this.props.caption}</Text>
+				</CardItem>
+				<CardItem><Body>
+					<Text>
+						{content}
+					</Text>
+				</Body></CardItem>
+			</Card>
 		);
 	}
 }
-*/
 
 class QuizCard extends React.Component {
 	render() {
 		return (
 			<Card style={{ elevation: 3 }}>
 				<QuizField onPress={() => this.props.flipCard("groesse")} showMe={this.props.showFields.groesse} caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
-				<QuizField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" content={this.props.quizData[1]} />
-				<QuizField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
+				<MathField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" content={this.props.quizData[1]} />
+				<MathField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
 			</Card>
 		);
 	}
