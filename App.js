@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Body, Text, View, DeckSwiper } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Body, Text, View, DeckSwiper, Thumbnail } from 'native-base';
 import './contentdb.json'
 
 contentdb = [
@@ -48,7 +48,7 @@ class MathField extends React.Component {
 		if (this.props.showMe) {
 			content = this.props.content;
 		} else {
-			content = "?";
+			content = "assets/formula/no.png";
 		}
 
 		return (
@@ -57,9 +57,7 @@ class MathField extends React.Component {
 					<Text>{this.props.caption}</Text>
 				</CardItem>
 				<CardItem><Body>
-					<Text>
-						{content}
-					</Text>
+					<Thumbnail square source={{uri: {content}}} />
 				</Body></CardItem>
 			</Card>
 		);
