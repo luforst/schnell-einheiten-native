@@ -8,8 +8,6 @@ BOILERPLATE_B = "$\\end\{document\}"
 contentdb = open(sys.argv[1], 'r')
 contentdb = json.load(contentdb)
 
-textemplate = open('formula.tex', 'r')
-
 def generateTexFile(texformula: str, filename: str):
     f = open(filename, "w")
     f.write(BOILERPLATE_A + texformula + BOILERPLATE_B)
