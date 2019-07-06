@@ -14,7 +14,7 @@ def generateTexFile(texformula: str, filename: str):
     f.close()
 
 for category in contentdb.keys():
-    for elem in category:
+    for elem in contentdb[category]:
         generateTexFile(elem[0], "assets/formula/"+elem[0]+"_gr.tex")
         generateTexFile(elem[1], "assets/formula/"+elem[0]+"_fz.tex")
         generateTexFile(elem[2], "assets/formula/"+elem[0]+"_einh.tex")
