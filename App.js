@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, View, DeckSwiper, Thumbnail } from 'native-base';
-import './contentdb.json'
+//import * as contentdb from './contentdb.json'
 
-contentdb = [
+contents = [
 	["Ladung", "Q", "1C (Coulomb)"],
 	["Spannung", "U", "1V (Volt)"],
 	["Kraft", "F", "1N (Newton)"],
@@ -29,19 +29,18 @@ class QuizField extends React.Component {
 
 		return (
 			<Card>
-            			<CardItem header button onPress={this.props.onPress}>
+            	<CardItem header button onPress={this.props.onPress}>
 					<Text>{this.props.caption}</Text>
 				</CardItem>
 				<CardItem><Body>
-					<Text>
-						{content}
-					</Text>
+					<Image source={{uri: {contenturi}}} style={{flex: 1}} />
 				</Body></CardItem>
 			</Card>
 		);
 	}
 }
 
+/*
 class MathField extends React.Component {
 	render() {
 		let content;
@@ -63,14 +62,15 @@ class MathField extends React.Component {
 		);
 	}
 }
+*/
 
 class QuizCard extends React.Component {
 	render() {
 		return (
 			<Card style={{ elevation: 3 }}>
-				<QuizField onPress={() => this.props.flipCard("groesse")} showMe={this.props.showFields.groesse} caption="Größe / Name einer Konstante" content={this.props.quizData[0]} />
-				<MathField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" content={this.props.quizData[1]} />
-				<MathField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" content={this.props.quizData[2]} />
+				<QuizField onPress={() => this.props.flipCard("groesse")} showMe={this.props.showFields.groesse} caption="Größe / Name einer Konstante" contenturi={this.props.quizData[0]} />
+				<QuizField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" contenturi={this.props.quizData[1]} />
+				<QuizField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" contenturi={this.props.quizData[2]} />
 			</Card>
 		);
 	}
@@ -116,7 +116,7 @@ class QuizDeckSwiper extends React.Component {
 				<Header />
 				<View>
 					<DeckSwiper
-						dataSource={contentdb}
+						dataSource={contents}
 						renderItem={item =>
 							<QuizCard quizData={item} showFields={this.state} flipCard={this.flipCard} />
 						}
