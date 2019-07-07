@@ -6,4 +6,4 @@ do
     pdflatex -synctex=1 -interaction=nonstopmode -shell-escape $texfile
     pdf2svg $(echo $texfile | sed 's/tex/pdf/') $(echo $texfile | sed 's/tex/svg/')
 done
-rm *.{pdf,tex,aux,synctex,log}
+rm *.{pdf,tex,aux,synctex.gz,log}
