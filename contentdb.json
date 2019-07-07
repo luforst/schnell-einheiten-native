@@ -39,7 +39,7 @@
         ["el. Spannung", "U", "1 V \\, \\textrm{(Volt)}", "el-spannung"],
         ["el. Potential", "\\Phi , \\, \\phi", "1 V \\, \\textrm{(Volt)}", "el-potential"],
         ["el. Ladung", "Q", "1 C \\, \\textrm{(Coulomb)}", "el-ladung"],
-        ["Lorentzkraft", "F_{L}", "1 N \\, \\textrm{(Newton)}"]
+        ["Lorentzkraft", "F_{L}", "1 N \\, \\textrm{(Newton)}", "lorentz"]
     ],
 
     "nuclear": [
