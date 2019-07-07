@@ -68,9 +68,9 @@ class QuizCard extends React.Component {
 	render() {
 		return (
 			<Card style={{ elevation: 3 }}>
-				<QuizField onPress={() => this.props.flipCard("groesse")} showMe={this.props.showFields.groesse} caption="Größe / Name einer Konstante" contenturi={this.props.quizData[0]} />
-				<QuizField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" contenturi={this.props.quizData[1]} />
-				<QuizField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" contenturi={this.props.quizData[2]} />
+				<QuizField onPress={() => this.props.flipCard("groesse")} showMe={this.props.showFields.groesse} caption="Größe / Name einer Konstante" contenturi={this.props.quizData[3]+"_gr.svg"} />
+				<QuizField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" contenturi={this.props.quizData[3]+"_fz.svg"} />
+				<QuizField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" contenturi={this.props.quizData[3]+"_einh.svg"} />
 			</Card>
 		);
 	}
