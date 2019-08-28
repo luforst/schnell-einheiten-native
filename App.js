@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, View, DeckSwiper, Thumbnail } from 'native-base';
 import * as contentdb from './contentdb.json'
