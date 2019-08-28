@@ -2,7 +2,7 @@
 import json
 import sys
 
-BOILERPLATE_A = "\\documentclass[11pt,border=1pt]{standalone}\n\\begin{document}\n$"
+BOILERPLATE_A = "\\documentclass[20pt,border=1pt]{standalone}\n\\begin{document}\n$"
 BOILERPLATE_B = "$\\end{document}"
 
 contentdb = open(sys.argv[1], 'r')
