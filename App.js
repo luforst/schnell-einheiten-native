@@ -13,11 +13,11 @@ function randint(min, max) {
 
 class QuizField extends React.Component {
 	render() {
-		let content;
+		let contenturi;
 		if (this.props.showMe) {
-			content = this.props.content;
+            contenturi = this.props.contenturi;
 		} else {
-			content = "?";
+            contenturi = "https://facebook.github.io/react-native/docs/assets/favicon.png";
 		}
 
 		return (
@@ -26,7 +26,7 @@ class QuizField extends React.Component {
 					<Text>{this.props.caption}</Text>
 				</CardItem>
 				<CardItem><Body>
-					<Image source={{uri: {contenturi}}} style={{flex: 1}} />
+					<Image source={{uri: contenturi}} style={{height: 70, width: 70, flex: 1}} />
 				</Body></CardItem>
 			</Card>
 		);
@@ -61,9 +61,9 @@ class QuizCard extends React.Component {
 	render() {
 		return (
 			<Card style={{ elevation: 3 }}>
-				<QuizField onPress={() => this.props.flipCard("groesse")} showMe={this.props.showFields.groesse} caption="Größe / Name einer Konstante" contenturi={this.props.quizData[3]+"_gr.svg"} />
-				<QuizField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" contenturi={this.props.quizData[3]+"_fz.svg"} />
-				<QuizField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" contenturi={this.props.quizData[3]+"_einh.svg"} />
+				<QuizField onPress={() => this.props.flipCard("groesse")} showMe={this.props.showFields.groesse} caption="Größe / Name einer Konstante" contenturi={"./assets/"+this.props.quizData[3]+"_gr.svg"} />
+				<QuizField onPress={() => this.props.flipCard("fz")} showMe={this.props.showFields.fz} caption="Formelzeichen" contenturi={"./assets/"+this.props.quizData[3]+"_fz.svg"} />
+				<QuizField onPress={() => this.props.flipCard("einheit")} showMe={this.props.showFields.einheit} caption="Einheit / Wert einer Konstante" contenturi={"./assets/"+this.props.quizData[3]+"_einh.svg"} />
 			</Card>
 		);
 	}
